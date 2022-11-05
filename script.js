@@ -1,24 +1,24 @@
-		function insert(num) {
-			var numero = document.getElementById('resultado').innerHTML;
-			document.getElementById('resultado').innerHTML = numero + num;
-		}
+insert = (num)=>{
+	var numero = document.getElementById('res').innerHTML;
+	document.getElementById('res').innerHTML = numero + num;
+}
 
+clean = ()=>{
+	document.getElementById('res').innerHTML = '';
+}
 
-		function clean() {
-			document.getElementById('resultado').innerHTML = '';
-		}
+back = ()=>{
+	var res = document.getElementById('res').innerHTML;
+	if(res){
+		document.getElementById('res').innerHTML = res.substring(0, res.length -1);
+	}
+}
 
-
-		function back() {
-			var resultado = document.getElementById('resultado').innerHTML;
-			document.getElementById('resultado').innerHTML = resultado.substring(0, resultado.length - 1);
-		}
-
-		function calcular() {
-			var resultado = document.getElementById('resultado').innerHTML;
-			if(resultado) {
-				document.getElementById('resultado').innerHTML = eval(resultado);
-			}else {
-				document.getElementById('resultado').innerHTML = 'Nada...'
-			}
-		}
+calc = ()=>{
+	var res = document.getElementById('res').innerHTML;
+	if(res){
+		document.getElementById('res').innerHTML = eval(res);
+	}else {
+		document.getElementById('res').innerHTML = 'Vazio...';
+	}
+}
